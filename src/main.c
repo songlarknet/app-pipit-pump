@@ -29,13 +29,13 @@ static void ctl_step() {
 	int level_low = gpio_pin_get_dt(&in_level_low);
 	int estop_ok = gpio_pin_get_dt(&in_estop_ok);
 
-	Example_Compile_Pump_input input = { .estop_ok = estop_ok, .level_low = level_low };
+	Example_Compile_Pump_input input = { .estop = !estop_ok, .level_low = level_low };
 	Example_Compile_Pump_output output = Example_Compile_Pump_step(input, &state);
 
 	gpio_pin_set_dt(&out_ok, estop_ok);
 	gpio_pin_set_dt(&out_stuck, output.nok_stuck);
-	gpio_pin_set_dt(&out_pump_en, output.pump_en);
-	gpio_pin_set_dt(&out_pump_en_led, output.pump_en);
+	gpio_pin_set_dt(&out_pump_en, output.sol_en);
+	gpio_pin_set_dt(&out_pump_en_led, output.sol_en);
 }
 
 static void main_timer_work_step(struct k_work *work) {

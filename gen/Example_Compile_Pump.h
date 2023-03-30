@@ -12,91 +12,84 @@
 
 typedef struct K_________s {  } K________;
 
-typedef struct K___K___K____________K____________s
+typedef struct K___K______________K____________s
 {
   K________ fst;
   K________ snd;
 }
-K___K___K____________K___________;
+K___K______________K___________;
 
-typedef struct K___K___K______________K______________Prims_int_s
+typedef struct K___K________________K______________Prims_int_s
 {
-  K___K___K____________K___________ fst;
+  K___K______________K___________ fst;
   Prims_int snd;
 }
-K___K___K______________K______________Prims_int;
+K___K________________K______________Prims_int;
 
-typedef struct K___K_________K___K___K______________K______________Prims_int____s
+typedef struct K___K______________K___K________________K______________Prims_int____s
 {
   K________ fst;
-  K___K___K______________K______________Prims_int snd;
+  K___K________________K______________Prims_int snd;
 }
-K___K_________K___K___K______________K______________Prims_int___;
+K___K______________K___K________________K______________Prims_int___;
 
-typedef struct K___bool_K______Prims_int_s
+typedef struct K___bool______Prims_int_s
 {
   bool fst;
   Prims_int snd;
 }
-K___bool_K______Prims_int;
-
-typedef struct K___K_________bool___K______Prims_int_s
-{
-  K________ fst;
-  K___bool_K______Prims_int snd;
-}
-K___K_________bool___K______Prims_int;
+K___bool______Prims_int;
 
 typedef struct K____________s {  } K___________;
 
-typedef struct K___K____________K____________s
+typedef struct K_____________________________s
 {
   K___________ fst;
   K___________ snd;
 }
-K___K____________K___________;
+K____________________________;
 
-typedef struct K________K_________K______________K____________s
+typedef struct
+K___K___________K___K________________K______________Prims_int______K___bool______Prims_int_s
+{
+  K___K________________K______________Prims_int fst;
+  K___bool______Prims_int snd;
+}
+K___K___________K___K________________K______________Prims_int______K___bool______Prims_int;
+
+typedef struct K___K______K_________K_____________________________s
 {
   K________ fst;
-  K___K____________K___________ snd;
+  K____________________________ snd;
 }
-K________K_________K______________K___________;
+K___K______K_________K____________________________;
 
 typedef struct
-K___K___K_________bool___K______Prims_int_K________K_________K______________K____________s
+K___K___________K___K________________K______________Prims_int________K___bool______Prims_int_K______K___________K_____________________________s
 {
-  K___K_________bool___K______Prims_int fst;
-  K________K_________K______________K___________ snd;
+  K___K___________K___K________________K______________Prims_int______K___bool______Prims_int fst;
+  K___K______K_________K____________________________ snd;
 }
-K___K___K_________bool___K______Prims_int_K________K_________K______________K___________;
-
-typedef struct
-K________K___K___K______________K______________Prims_int______K___K_________bool___K______Prims_int___K________K_________K______________K____________s
-{
-  K___K___K______________K______________Prims_int fst;
-  K___K___K_________bool___K______Prims_int_K________K_________K______________K___________ snd;
-}
-K________K___K___K______________K______________Prims_int______K___K_________bool___K______Prims_int___K________K_________K______________K___________;
+K___K___________K___K________________K______________Prims_int________K___bool______Prims_int_K______K___________K____________________________;
 
 typedef struct Example_Compile_Pump_state_s
 {
-  K___K_________K___K___K______________K______________Prims_int___ fst;
-  K________K___K___K______________K______________Prims_int______K___K_________bool___K______Prims_int___K________K_________K______________K___________
+  K___K______________K___K________________K______________Prims_int___ fst;
+  K___K___________K___K________________K______________Prims_int________K___bool______Prims_int_K______K___________K____________________________
   snd;
 }
 Example_Compile_Pump_state;
 
 typedef struct Example_Compile_Pump_input_s
 {
-  bool estop_ok;
+  bool estop;
   bool level_low;
 }
 Example_Compile_Pump_input;
 
 typedef struct Example_Compile_Pump_output_s
 {
-  bool pump_en;
+  bool sol_en;
   bool nok_stuck;
 }
 Example_Compile_Pump_output;
