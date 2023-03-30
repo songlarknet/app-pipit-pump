@@ -17,6 +17,8 @@ static const struct gpio_dt_spec out_stuck =
 	GPIO_DT_SPEC_GET(DT_ALIAS(out_stuck), gpios);
 static const struct gpio_dt_spec out_pump_en =
 	GPIO_DT_SPEC_GET(DT_ALIAS(out_pump_en), gpios);
+static const struct gpio_dt_spec out_pump_en_led =
+	GPIO_DT_SPEC_GET(DT_ALIAS(out_pump_en_led), gpios);
 
 Example_Compile_Pump_state state;
 static void ctl_init() {
@@ -33,6 +35,7 @@ static void ctl_step() {
 	gpio_pin_set_dt(&out_ok, estop_ok);
 	gpio_pin_set_dt(&out_stuck, output.nok_stuck);
 	gpio_pin_set_dt(&out_pump_en, output.pump_en);
+	gpio_pin_set_dt(&out_pump_en_led, output.pump_en);
 }
 
 static void main_timer_work_step(struct k_work *work) {
@@ -60,7 +63,9 @@ void main(void) {
 		gpio_pin_configure_dt(&in_estop_ok, GPIO_INPUT) ||
 		gpio_pin_configure_dt(&out_ok, GPIO_OUTPUT_INACTIVE) ||
 		gpio_pin_configure_dt(&out_stuck, GPIO_OUTPUT_INACTIVE) ||
-		gpio_pin_configure_dt(&out_pump_en, GPIO_OUTPUT_INACTIVE);
+		gpio_pin_configure_dt(&out_pump_en, GPIO_OUTPUT_INACTIVE) ||
+		gpio_pin_configure_dt(&out_pump_en_led, GPIO_OUTPUT_INACTIVE) ||
+		0;
 	if (ret < 0) {
 		return;
 	}
