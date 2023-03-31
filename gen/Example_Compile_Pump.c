@@ -111,7 +111,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
     else
       ite6 = (krml_checked_int_t)0;
     Prims_int ite7;
-    if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite6))
+    if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite6))
       ite7 = (krml_checked_int_t)1;
     else
       ite7 = (krml_checked_int_t)0;
@@ -155,7 +155,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
         ite = s29.snd;
       else
         ite = (krml_checked_int_t)0;
-      if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite))
+      if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite))
         ite8 = (krml_checked_int_t)1;
       else
         ite8 = (krml_checked_int_t)0;
@@ -221,7 +221,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
   else
     ite12 = (krml_checked_int_t)0;
   Prims_int ite13;
-  if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite12))
+  if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite12))
     ite13 = (krml_checked_int_t)1;
   else
     ite13 = (krml_checked_int_t)0;
@@ -265,7 +265,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
       ite = s27.snd;
     else
       ite = (krml_checked_int_t)0;
-    if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite))
+    if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite))
       ite14 = (krml_checked_int_t)1;
     else
       ite14 = (krml_checked_int_t)0;
@@ -487,7 +487,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
   else
     ite35 = (krml_checked_int_t)0;
   Prims_int ite36;
-  if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite35))
+  if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite35))
     ite36 = (krml_checked_int_t)1;
   else
     ite36 = (krml_checked_int_t)0;
@@ -531,7 +531,7 @@ Example_Compile_Pump_step(Example_Compile_Pump_input inp, Example_Compile_Pump_s
       ite = s26.snd;
     else
       ite = (krml_checked_int_t)0;
-    if (Prims_op_LessThanOrEqual((krml_checked_int_t)6000, ite))
+    if (Prims_op_LessThanOrEqual((krml_checked_int_t)1000, ite))
       ite37 = (krml_checked_int_t)1;
     else
       ite37 = (krml_checked_int_t)0;
