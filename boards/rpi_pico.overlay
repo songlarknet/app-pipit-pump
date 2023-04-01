@@ -8,26 +8,53 @@
 		in_estop_ok: input1 {
 			gpios = <&gpio0 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		};
-		out_ok: output0 {
-			gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
-		};
-		out_stuck: output1 {
-			gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-		};
 		out_pump_en: output2 {
 			gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
 		};
-		out_pump_en_led: output4 {
-			gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+	};
+
+	pwm_leds {
+		pwm_led_pump: pwm_led_3 {
+			status = "okay";
+			// I think this frequency is overridden in the implementation
+			pwms = <&pwm 3 PWM_KHZ(1) PWM_POLARITY_NORMAL>;
+			// label = "PWM_LED";
+		};
+		pwm_led_ok: pwm_led_4 {
+			status = "okay";
+			pwms = <&pwm 4 PWM_KHZ(1) PWM_POLARITY_NORMAL>;
+		};
+		pwm_led_stuck: pwm_led_5 {
+			status = "okay";
+			pwms = <&pwm 5 PWM_KHZ(1) PWM_POLARITY_NORMAL>;
 		};
 	};
 
 	aliases {
 		in-level-low = &in_level_low;
 		in-estop-ok = &in_estop_ok;
-		out-ok = &out_ok;
-		out-stuck = &out_stuck;
 		out-pump-en = &out_pump_en;
-		out-pump-en-led = &out_pump_en_led;
+		pwm-led-pump = &pwm_led_pump;
+		pwm-led-ok = &pwm_led_ok;
+		pwm-led-stuck = &pwm_led_stuck;
+	};
+};
+
+&pwm {
+	status = "okay";
+	pinctrl-0 = <&pwm_cfg>;
+	pinctrl-names = "default";
+	// I am not sure if these dividers are having any effect
+	divider-int-1 = <255>;
+	divider-frac-1 = <1>;
+	divider-int-2 = <255>;
+	divider-frac-2 = <1>;
+};
+
+&pinctrl {
+	pwm_cfg: pwm_cfg {
+		group1 {
+			pinmux = <PWM_1B_P3 PWM_2A_P4 PWM_2B_P5>;
+		};
 	};
 };
